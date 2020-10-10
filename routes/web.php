@@ -3,14 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'PagesController@home');
 
-Route::get('/about', function () {
-    return view('page-about');
-});
+Route::get('/about', 'PagesController@about');
 
-Route::get('/product-list', function () {
-    return view('page-product-list');
-});
+Route::get('/product-list', 'PagesController@products');
