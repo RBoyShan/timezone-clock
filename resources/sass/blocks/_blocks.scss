@@ -2,7 +2,8 @@
 @import "general/_header";
 
 //About page
-@import "about-project/_about-project";
+@import "about/_about-project";
 
 //Product page
-@import "product-list/_product-list";
+@import "product/_product-list";
+@import "product/_create-form";

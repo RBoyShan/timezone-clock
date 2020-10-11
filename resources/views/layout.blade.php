@@ -25,6 +25,10 @@
             <li class="header__navigation-item">
                 <a class="header__navigation-link" href="/product-list">Shop</a>
             </li>
+
+            <li class="header__navigation-item">
+                <a class="header__navigation-link" href="/product/create">Create</a>
+            </li>
         </ul>
     </nav>
 </header>
