@@ -1,4 +1,11 @@
-//
-@import 'blocks/about-project/_about-project';
-@import 'blocks/header/_header';
-@import 'blocks/product-list/_product-list';
+//base
+@import "base/_base";
+
+//mixin
+@import "mixin/_mixin";
+
+//ui
+@import "ui/_ui";
+
+//blocks
+@import 'blocks/_blocks';

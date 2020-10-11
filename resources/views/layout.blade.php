@@ -15,15 +15,15 @@
     <nav class="header__navigation">
         <ul class="header__navigation-list">
             <li class="header__navigation-item">
-                <a href="/">Головна</a>
+                <a class="header__navigation-link" href="/">Home</a>
             </li>
 
             <li class="header__navigation-item">
-                <a href="/about">Про проект</a>
+                <a class="header__navigation-link" href="/about">About</a>
             </li>
 
             <li class="header__navigation-item">
-                <a href="/product-list">Список товарів</a>
+                <a class="header__navigation-link" href="/product-list">Shop</a>
             </li>
         </ul>
     </nav>

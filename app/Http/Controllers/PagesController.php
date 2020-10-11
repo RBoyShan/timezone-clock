@@ -14,12 +14,4 @@ class PagesController extends Controller
     public function about() {
         return view('page-about');
     }
-
-    public function products() {
-        return view('page-product-list')
-            ->with([
-                'products' => Product::getProducts(),
-                'page_title' => 'Список товарів'
-            ]);
-    }
 }

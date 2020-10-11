@@ -7,4 +7,6 @@ Route::get('/', 'PagesController@home');
 
 Route::get('/about', 'PagesController@about');
 
-Route::get('/product-list', 'PagesController@products');
+Route::get('/product-list', 'ProductsController@index');
+
+Route::get('/products-json', 'ProductsController@productsJSON');

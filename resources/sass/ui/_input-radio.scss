@@ -1,0 +1,39 @@
+.input-radio {
+    label {
+
+
+        p {
+
+        }
+
+        &::before {
+
+        }
+
+        &::after {
+
+        }
+    }
+
+    input[type=radio] {
+
+    }
+
+    input[type=radio]:checked {
+        + label {
+            &:before {
+
+            }
+
+            &:after {
+
+            }
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        label {
+
+        }
+    }
+}

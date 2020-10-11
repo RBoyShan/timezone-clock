@@ -2,7 +2,7 @@
 
 @section('app-title', 'About')
 
-@section('page-title', 'Про проект')
+@section('page-title', 'About Us')
 
 @section('page-content')
     <div class="about-project">

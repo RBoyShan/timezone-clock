@@ -1,0 +1,12 @@
+.button {
+
+    // Disabled
+    &.disabled,
+    &[disabled] {
+
+        &:hover,
+        &:focus {
+
+        }
+    }
+}
