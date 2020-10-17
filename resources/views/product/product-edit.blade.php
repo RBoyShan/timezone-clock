@@ -17,13 +17,27 @@
                    Product name:
                </label>
 
-               <input class="input create-form__control"
+               <input class="input create-form__control {{ $errors->has('name') ? 'input--error' : '' }}"
                       type="text"
                       name="name"
                       id="prod-name"
                       placeholder="Product name"
                       value="{{ $product->name }}"
+                      required
+                      maxlength="100"
                />
+
+               @if($errors->has('name'))
+                   <small class="form-text text-danger error-message">
+                       <ul>
+                           @foreach($errors->get('name') as $error)
+                               <li>
+                                   {{ $error }}
+                               </li>
+                           @endforeach
+                       </ul>
+                   </small>
+               @endif
            </div>
 
            <div class="create-form__group">
@@ -31,13 +45,27 @@
                    Product manufacturer:
                </label>
 
-               <input class="input create-form__control"
+               <input class="input create-form__control {{ $errors->has('manufacturer') ? 'input--error' : '' }}"
                       type="text"
                       name="manufacturer"
                       id="prod-manufacturer"
                       placeholder="Product manufacturer"
                       value="{{ $product->manufacturer }}"
+                      required
+                      maxlength="100"
                />
+
+               @if($errors->has('manufacturer'))
+                   <small class="form-text text-danger error-message">
+                       <ul>
+                           @foreach($errors->get('manufacturer') as $error)
+                               <li>
+                                   {{ $error }}
+                               </li>
+                           @endforeach
+                       </ul>
+                   </small>
+               @endif
            </div>
 
            <div class="create-form__group">
@@ -45,13 +73,26 @@
                    Product image:
                </label>
 
-               <input class="input create-form__control"
+               <input class="input create-form__control {{ $errors->has('image') ? 'input--error' : '' }}"
                       type="text"
                       name="image"
                       id="prod-image"
                       placeholder="Product image URL"
                       value="{{ $product->image }}"
+                      required
                />
+
+               @if($errors->has('image'))
+                   <small class="form-text text-danger error-message">
+                       <ul>
+                           @foreach($errors->get('image') as $error)
+                               <li>
+                                   {{ $error }}
+                               </li>
+                           @endforeach
+                       </ul>
+                   </small>
+               @endif
            </div>
 
            <div class="create-form__group create-form__group--double">
@@ -60,16 +101,29 @@
                        Product price:
                    </label>
 
-                   <input class="input create-form__control"
+                   <input class="input create-form__control {{ $errors->has('price') ? 'input--error' : '' }}"
                           type="number"
                           min="0.00"
-                          max="10000.00"
+                          max="100000.00"
                           step="0.01"
-                          name="prod-price"
+                          name="price"
                           id="prod-price"
                           placeholder="Product manufacturer"
                           value="{{ $product->price }}"
+                          required
                    />
+
+                   @if($errors->has('price'))
+                       <small class="form-text text-danger error-message">
+                           <ul>
+                               @foreach($errors->get('price') as $error)
+                                   <li>
+                                       {{ $error }}
+                                   </li>
+                               @endforeach
+                           </ul>
+                       </small>
+                   @endif
                </div>
 
                <div class="create-form__group create-form__group--half">
@@ -77,15 +131,28 @@
                        Product count:
                    </label>
 
-                   <input class="input create-form__control"
+                   <input class="input create-form__control {{ $errors->has('count') ? 'input--error' : '' }}"
                           type="number"
                           min="1"
-                          max="10000"
+                          max="99"
                           name="count"
                           id="prod-count"
                           placeholder="Product count"
                           value="{{ $product->count }}"
+                          required
                    />
+
+                   @if($errors->has('count'))
+                       <small class="form-text text-danger error-message">
+                           <ul>
+                               @foreach($errors->get('count') as $error)
+                                   <li>
+                                       {{ $error }}
+                                   </li>
+                               @endforeach
+                           </ul>
+                       </small>
+                   @endif
                </div>
            </div>
 
@@ -164,7 +231,7 @@
                   },
 
                   success: function (message) {
-                      location.href = '/products';
+                      location.href = '/product';
                   }
               });
           });

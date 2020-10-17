@@ -1,9 +1,6 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0-modified | 20110126
-   License: none (public domain)
-*/
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;
 
-body {
+0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap);body {
   box-sizing: border-box;
 }
 
@@ -491,6 +488,21 @@ textarea {
   outline: none;
 }
 
+.button.disabled,
+.button[disabled] {
+  cursor: default;
+  background-color: #636b6f;
+  border-color: #636b6f;
+}
+
+.button.disabled:hover,
+.button.disabled:focus,
+.button[disabled]:hover,
+.button[disabled]:focus {
+  background-color: #636b6f;
+  border-color: #636b6f;
+}
+
 .input {
   width: 100%;
   margin-top: 6px;
@@ -499,6 +511,17 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   letter-spacing: 1px;
+}
+
+.input.input--error {
+  border-color: #E51400;
+  box-shadow: 0 0 4px 1px #E51400;
+}
+
+.error-message {
+  margin-top: -10px;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
 }
 
 .label {

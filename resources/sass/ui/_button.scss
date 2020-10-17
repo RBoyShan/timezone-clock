@@ -17,10 +17,14 @@
     // Disabled
     &.disabled,
     &[disabled] {
+        cursor: default;
+        background-color: #636b6f;
+        border-color: #636b6f;
 
         &:hover,
         &:focus {
-
+            background-color: #636b6f;
+            border-color: #636b6f;
         }
     }
 }

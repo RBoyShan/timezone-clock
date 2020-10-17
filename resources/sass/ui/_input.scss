@@ -8,7 +8,18 @@
     letter-spacing: 1px;
 
 
+    &.input--error {
+        border-color: #E51400;
+        box-shadow: 0 0 4px 1px #E51400;
+    }
+
     &:focus {
 
     }
+}
+
+.error-message {
+    margin-top: -10px;
+    font-size: 12px;
+    font-family: $main-font;
 }
