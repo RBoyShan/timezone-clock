@@ -44,7 +44,7 @@
                <input class="input create-form__control"
                       type="text"
                       name="prod-image"
-                      id="prod-price"
+                      id="prod-image"
                       placeholder="Product image URL"
                />
            </div>

@@ -13,14 +13,14 @@
 
                 @foreach($products as $product)
                     <div class="product-list__item">
-                        <a class="product-list__item-image-wrapper" href="#">
+                        <a class="product-list__item-image-wrapper" href="/product/{{ $product->id }}">
                             <img class="product-list__item-image"
                                  src="{{ $product->image }}"
                                  alt="{{ $product->name }}"
                             />
                         </a>
 
-                        <a class="product-list__item-title" href="#">
+                        <a class="product-list__item-title" href="/product/{{ $product->id }}">
                             {{ $product->name }}
                         </a>
 

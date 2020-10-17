@@ -2,7 +2,7 @@
 
 @section('app-title', 'Product list')
 
-@section('page-title', 'Create product')
+@section('page-title', 'Edit product')
 
 @section('page-content')
    <div class="container">
@@ -19,7 +19,7 @@
 
                <input class="input create-form__control"
                       type="text"
-                      name="prod-name"
+                      name="name"
                       id="prod-name"
                       placeholder="Product name"
                       value="{{ $product->name }}"
@@ -33,7 +33,7 @@
 
                <input class="input create-form__control"
                       type="text"
-                      name="prod-manufacturer"
+                      name="manufacturer"
                       id="prod-manufacturer"
                       placeholder="Product manufacturer"
                       value="{{ $product->manufacturer }}"
@@ -47,8 +47,8 @@
 
                <input class="input create-form__control"
                       type="text"
-                      name="prod-image"
-                      id="prod-price"
+                      name="image"
+                      id="prod-image"
                       placeholder="Product image URL"
                       value="{{ $product->image }}"
                />
@@ -81,7 +81,7 @@
                           type="number"
                           min="1"
                           max="10000"
-                          name="prod-count"
+                          name="count"
                           id="prod-count"
                           placeholder="Product count"
                           value="{{ $product->count }}"
@@ -94,6 +94,80 @@
            >
                Edit
            </button>
+
+           <button class="button button--delete create-form__delete"
+                   type="button"
+                   data-toggle="modal"
+                   data-target="#deleteModal"
+           >
+               Remove
+           </button>
        </form>
+
+       <div class="modal fade"
+            id="deleteModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="ModalLabel"
+            aria-hidden="true"
+       >
+           <div class="modal-dialog" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="ModalLabel">
+                           <p>Confirm product removal</p>
+                       </h5>
+
+                       <button class="close"
+                               type="button"
+                               data-dismiss="modal"
+                               aria-label="Close"
+                       >
+                           <span aria-hidden="true">✕</span>
+                       </button>
+                   </div>
+
+                   <div class="modal-body">
+                       Delete product {{ $product->name }}
+                   </div>
+
+                   <div class="modal-footer">
+                       <button class="button button--cancel"
+                               type="button"
+                               data-dismiss="modal"
+                       >
+                            <span>No</span>
+                       </button>
+
+                       <button class="button button--delete js-remove-product"
+                               type="button"
+                       >
+                           <span>Delete</span>
+                       </button>
+                   </div>
+               </div>
+           </div>
+       </div>
    </div>
+
+   <script>
+       $(document).ready(function () {
+          $('.js-remove-product').click(function () {
+              let id = {!! $product->id !!} ;
+
+              $.ajax({
+                  url: `/product/${id}`,
+                  type: 'post',
+                  data: {
+                      _method: 'delete',
+                      _token: '{!! csrf_token() !!}'
+                  },
+
+                  success: function (message) {
+                      location.href = '/products';
+                  }
+              });
+          });
+       });
+   </script>
 @endsection

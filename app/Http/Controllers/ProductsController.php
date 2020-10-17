@@ -26,38 +26,40 @@ class ProductsController extends Controller
     }
 
     public function store() {
-        $product = new Product();
+        Product::create([
+            'name'         => \request('prod-name'),
+            'manufacturer' => \request('prod-manufacturer'),
+            'image'        => \request('prod-image'),
+            'price'        => \request('prod-price'),
+            'count'        => \request('prod-count')
+        ]);
 
-        $product->name         = \request('prod-name');
-        $product->manufacturer = \request('prod-manufacturer');
-        $product->image        = \request('prod-image');
-        $product->price        = \request('prod-price');
-        $product->count        = \request('prod-count');
-
-        $product->save();
-
-        return redirect('/product-list');
+        return redirect('/product');
     }
 
-    public function edit($id) {
-        $product = Product::find($id);
-
+    public function edit(Product $product) {
         return view('product/product-edit', [
            'product' => $product
         ]);
     }
 
-    public function update($id) {
-        $product = Product::find($id);
-
-        $product->name         = \request('prod-name');
-        $product->manufacturer = \request('prod-manufacturer');
-        $product->image        = \request('prod-image');
-        $product->price        = \request('prod-price');
-        $product->count        = \request('prod-count');
+    public function update(Product $product) {
+        $product->update([
+            \request(['name', 'manufacturer', 'image', 'price', 'count'])
+        ]);
 
         $product->save();
 
-        return redirect('/product-list');
+        return redirect('/product');
+    }
+
+    public function destroy(Product $product) {
+        $product->delete();
+    }
+
+    public function show(Product $product) {
+        return view('product/product-show', [
+           'product' => $product
+        ]);
     }
 }
