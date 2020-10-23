@@ -33,11 +33,15 @@
             </li>
 
             <li class="header__navigation-item">
-                <a class="header__navigation-link" href="/product">Shop</a>
+                <a class="header__navigation-link" href="/collection/0/product">Products</a>
             </li>
 
             <li class="header__navigation-item">
-                <a class="header__navigation-link" href="/product/create">Create</a>
+                <a class="header__navigation-link" href="/collections">Collections</a>
+            </li>
+
+            <li class="header__navigation-item">
+                <a class="header__navigation-link" href="/collection/0/product/create">Create</a>
             </li>
         </ul>
     </nav>

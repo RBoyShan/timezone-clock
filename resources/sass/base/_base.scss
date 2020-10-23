@@ -1,8 +1,17 @@
 @import "variables";
 @import "_normalize";
-
+@import "typography";
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(black, 0.5);
 }
