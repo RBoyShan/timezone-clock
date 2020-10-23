@@ -14,7 +14,7 @@
 
                 @foreach($collections as $collection)
                     <div class="collections-list__item">
-                        <a class="collections-list__item-image-wrapper" href="/collection/{{ $collection->id }}">
+                        <a class="collections-list__item-image-wrapper" href="collection/{{ $collection->id }}/product">
                             <img class="collections-list__item-image"
                                  src="{{ $collection->image_src }}"
                                  alt="{{ $collection->name }}"
@@ -27,7 +27,7 @@
                             </div>
                         </a>
 
-                        <a class="button button--action collections-list__button" href="/collections/{{ $collection->id }}/edit">Edit Collection</a>
+                        <a class="button button--action collections-list__button" href="collections/{{ $collection->id }}/edit">Edit Collection</a>
                     </div>
                 @endforeach
 

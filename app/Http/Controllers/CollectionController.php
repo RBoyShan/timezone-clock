@@ -29,7 +29,7 @@ class CollectionController extends Controller
 
         Collection::create($data);
 
-        return redirect('/collections');
+        return redirect('collections');
     }
 
     /**
@@ -61,9 +61,11 @@ class CollectionController extends Controller
 
         $product = Product::find($data['product_id']);
 
-        $collection->product()->associate('');
+        $collection->product()->associate($product);
 
-        return redirect('/collections');
+        $collection->save();
+
+        return redirect('collections');
     }
 
     public function destroy(Collection $collection)

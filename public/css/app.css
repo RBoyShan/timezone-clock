@@ -811,7 +811,7 @@ textarea,
 
 @media (-moz-touch-enabled: 0), (hover: hover) {
   .collections-list .collections-list__item-image-wrapper:hover .collections-list__item-overlay {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 
@@ -829,7 +829,7 @@ textarea,
 }
 
 .collections-list .collections-list__item-overlay {
-  transform: translateX(-100%);
+  transform: translateY(-100%);
   transition-property: all;
   transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);

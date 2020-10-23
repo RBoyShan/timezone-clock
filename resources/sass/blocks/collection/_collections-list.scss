@@ -20,7 +20,7 @@
 
         @include hover {
             .collections-list__item-overlay {
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
     }
@@ -38,7 +38,7 @@
     }
 
     .collections-list__item-overlay {
-        transform: translateX(-100%);
+        transform: translateY(-100%);
 
         @include momentum-transition;
     }

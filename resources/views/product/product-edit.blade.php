@@ -6,7 +6,7 @@
 
 @section('page-content')
    <div class="container">
-       <form class="form create-form" method="post" action="/product/{{ $product->id }}">
+       <form class="form create-form" method="post" action="collection/{{ $collection_filter_id }}/product/{{ $product->id }}">
 
           @csrf
 
@@ -63,6 +63,25 @@
                         'value'       => $product->count
                     ])
                </div>
+           </div>
+
+           <div class="create-form__group">
+               <label class="label create-form__label" for="collection">
+                   Product:
+               </label>
+
+               <select class="input create-form__control select {{ $errors->has('collection') ? 'input--error' : '' }}"
+                       name="collection"
+                       id="collection"
+               >
+                   @foreach($collections as $collection)
+                       <option @if($collection->id == $product->collection->id) selected @endif value="{{ $collection->id }}">
+                           {{ $collection->name }}
+                       </option>
+                   @endforeach
+               </select>
+
+               @include('includes/validation-error', ['errorTarget' => 'collection'])
            </div>
 
            <button class="button button--submit create-form__submit" type="submit">Edit</button>
@@ -126,7 +145,7 @@
               let id = {!! $product->id !!} ;
 
               $.ajax({
-                  url: `/product/${id}`,
+                  url: `product/${id}`,
                   type: 'post',
                   data: {
                       _method: 'delete',
@@ -134,7 +153,7 @@
                   },
 
                   success: function (message) {
-                      location.href = '/product';
+                      location.href = 'product';
                   }
               });
           });

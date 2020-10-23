@@ -11,6 +11,10 @@ class Product extends Model
     ];
 
     public function collection() {
-        return $this->belongsTo(Collection::class, 'collection_id', 'id');
+        return $this->belongsTo(
+            Collection::class,
+            'collection_id',
+            'id'
+        );
     }
 }
