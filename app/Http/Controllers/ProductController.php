@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Collection;
+use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
@@ -21,7 +23,10 @@ class ProductController extends Controller
     }
 
     public function create() {
-        return view('product/product-create');
+        return view('product/product-create')
+            ->with([
+                'collections' => Collection::all()->sortBy('name')
+            ]);
     }
 
     public function store() {
@@ -31,6 +36,7 @@ class ProductController extends Controller
             'prod-image'        => 'required',
             'prod-price'        => 'required',
             'prod-count'        => 'required|max:1000',
+            'prod-collection'   => ['required', Rule::exists('collections', 'id')]
         ], [
             'prod-name.required'         => 'Field "name" must be filled',
             'prod-name.min'              => 'Minimum length must be 3 characters character',
@@ -42,6 +48,8 @@ class ProductController extends Controller
             'prod-price.required'        => 'Field "price" must be filled',
             'prod-count.required'        => 'Field "count" must be filled',
             'prod-count.max'             => 'Maximum value must be 99',
+            'prod-collection.required'   => 'Field "collection" must be selected',
+            'prod-collection.exists'     => 'Incorrect collection'
         ]);
 
         Product::create([

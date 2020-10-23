@@ -63,6 +63,27 @@
                </div>
            </div>
 
+           <div class="create-form__group">
+               <label class="label create-form__label" for="prod-collection">
+                   Product:
+               </label>
+
+               <select class="input create-form__control select {{ $errors->has('prod-collection') ? 'input--error' : '' }}"
+                       name="prod-collection"
+                       id="prod-collection"
+               >
+                   <option selected disabled value="0">Select Collection</option>
+
+                   @foreach($collections as $collection)
+                       <option  value="{{ $collection->id }}">
+                           {{ $collection->name }}
+                       </option>
+                   @endforeach
+               </select>
+
+               @include('includes/validation-error', ['errorTarget' => 'prod-collection'])
+           </div>
+
            <button class="button button--submit create-form__submit" type="submit">Add</button>
        </form>
    </div>
