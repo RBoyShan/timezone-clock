@@ -13,154 +13,59 @@
            {{ method_field('patch') }}
 
            <div class="create-form__group">
-               <label class="label create-form__label" for="prod-name">
-                   Product name:
-               </label>
-
-               <input class="input create-form__control {{ $errors->has('name') ? 'input--error' : '' }}"
-                      type="text"
-                      name="name"
-                      id="prod-name"
-                      placeholder="Product name"
-                      value="{{ $product->name }}"
-                      required
-                      maxlength="100"
-               />
-
-               @if($errors->has('name'))
-                   <small class="form-text text-danger error-message">
-                       <ul>
-                           @foreach($errors->get('name') as $error)
-                               <li>
-                                   {{ $error }}
-                               </li>
-                           @endforeach
-                       </ul>
-                   </small>
-               @endif
+               @include('includes/default-input-text', [
+                  'field'       => 'name',
+                  'label'       => 'Product name:',
+                  'placeholder' => 'Product name',
+                  'value'       => $product->name
+              ])
            </div>
 
            <div class="create-form__group">
-               <label class="label create-form__label" for="prod-manufacturer">
-                   Product manufacturer:
-               </label>
-
-               <input class="input create-form__control {{ $errors->has('manufacturer') ? 'input--error' : '' }}"
-                      type="text"
-                      name="manufacturer"
-                      id="prod-manufacturer"
-                      placeholder="Product manufacturer"
-                      value="{{ $product->manufacturer }}"
-                      required
-                      maxlength="100"
-               />
-
-               @if($errors->has('manufacturer'))
-                   <small class="form-text text-danger error-message">
-                       <ul>
-                           @foreach($errors->get('manufacturer') as $error)
-                               <li>
-                                   {{ $error }}
-                               </li>
-                           @endforeach
-                       </ul>
-                   </small>
-               @endif
+               @include('includes/default-input-text', [
+                   'field'       => 'manufacturer',
+                   'label'       => 'Product manufacturer:',
+                   'placeholder' => 'Product manufacturer',
+                   'value'       => $product->manufacturer
+               ])
            </div>
 
            <div class="create-form__group">
-               <label class="label create-form__label" for="prod-image">
-                   Product image:
-               </label>
-
-               <input class="input create-form__control {{ $errors->has('image') ? 'input--error' : '' }}"
-                      type="text"
-                      name="image"
-                      id="prod-image"
-                      placeholder="Product image URL"
-                      value="{{ $product->image }}"
-                      required
-               />
-
-               @if($errors->has('image'))
-                   <small class="form-text text-danger error-message">
-                       <ul>
-                           @foreach($errors->get('image') as $error)
-                               <li>
-                                   {{ $error }}
-                               </li>
-                           @endforeach
-                       </ul>
-                   </small>
-               @endif
+               @include('includes/default-input-text', [
+                   'field'       => 'image',
+                   'label'       => 'Product image:',
+                   'placeholder' => 'Product image',
+                   'value'       => $product->image
+               ])
            </div>
 
            <div class="create-form__group create-form__group--double">
                <div class="create-form__group create-form__group--half">
-                   <label class="label create-form__label" for="prod-price">
-                       Product price:
-                   </label>
-
-                   <input class="input create-form__control {{ $errors->has('price') ? 'input--error' : '' }}"
-                          type="number"
-                          min="0.00"
-                          max="100000.00"
-                          step="0.01"
-                          name="price"
-                          id="prod-price"
-                          placeholder="Product manufacturer"
-                          value="{{ $product->price }}"
-                          required
-                   />
-
-                   @if($errors->has('price'))
-                       <small class="form-text text-danger error-message">
-                           <ul>
-                               @foreach($errors->get('price') as $error)
-                                   <li>
-                                       {{ $error }}
-                                   </li>
-                               @endforeach
-                           </ul>
-                       </small>
-                   @endif
+                   @include('includes/default-input-number', [
+                        'field'       => 'price',
+                        'label'       => 'Product price:',
+                        'placeholder' => 'Product price',
+                        'min'         => '0.00',
+                        'max'         => '10000.00',
+                        'step'        => '0.01',
+                        'value'       => $product->price
+                    ])
                </div>
 
                <div class="create-form__group create-form__group--half">
-                   <label class="label create-form__label" for="prod-count">
-                       Product count:
-                   </label>
-
-                   <input class="input create-form__control {{ $errors->has('count') ? 'input--error' : '' }}"
-                          type="number"
-                          min="1"
-                          max="99"
-                          name="count"
-                          id="prod-count"
-                          placeholder="Product count"
-                          value="{{ $product->count }}"
-                          required
-                   />
-
-                   @if($errors->has('count'))
-                       <small class="form-text text-danger error-message">
-                           <ul>
-                               @foreach($errors->get('count') as $error)
-                                   <li>
-                                       {{ $error }}
-                                   </li>
-                               @endforeach
-                           </ul>
-                       </small>
-                   @endif
+                   @include('includes/default-input-number', [
+                        'field'       => 'count',
+                        'label'       => 'Product count:',
+                        'placeholder' => 'Product count',
+                        'min'         => '1',
+                        'max'         => '10000',
+                        'step'        => '1',
+                        'value'       => $product->count
+                    ])
                </div>
            </div>
 
-           <button class="button button--submit create-form__submit"
-                   type="submit"
-           >
-               Edit
-           </button>
+           <button class="button button--submit create-form__submit" type="submit">Edit</button>
 
            <button class="button button--delete create-form__delete"
                    type="button"
@@ -182,7 +87,7 @@
                <div class="modal-content">
                    <div class="modal-header">
                        <h5 class="modal-title" id="ModalLabel">
-                           <p>Confirm product removal</p>
+                           <span>Confirm product removal</span>
                        </h5>
 
                        <button class="close"
@@ -206,9 +111,7 @@
                             <span>No</span>
                        </button>
 
-                       <button class="button button--delete js-remove-product"
-                               type="button"
-                       >
+                       <button class="button button--delete js-remove-product" type="button">
                            <span>Delete</span>
                        </button>
                    </div>

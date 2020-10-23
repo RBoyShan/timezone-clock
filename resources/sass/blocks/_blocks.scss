@@ -1,10 +1,13 @@
 //General
 @import "general/_header";
+@import "general/_create-form";
 
 //About page
 @import "about/_about-project";
 
-//Product page
-@import "product/_create-form";
+//PDP
 @import "product/_product-details";
 @import "product/_product-list";
+
+//PLP
+@import "collection/_collections-list.scss";
