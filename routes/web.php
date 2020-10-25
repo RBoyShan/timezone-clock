@@ -13,6 +13,8 @@ Route::resource('collection/{cid}/product', 'ProductController');
 
 Route::resource('collections', 'CollectionController');
 
+Route::resource('wishlist', 'WishlistController');
+
 Route::get('product/collections/{id}', 'ProductController@index');
 
 Auth::routes();

@@ -6,6 +6,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     letter-spacing: 1px;
+    transition: all .3s ease-in-out;
 
 
     &.input--error {
@@ -13,8 +14,11 @@
         box-shadow: 0 0 4px 1px #E51400;
     }
 
+    &:hover,
     &:focus {
-
+        background: #ffe;
+        border: 1px solid #0075FF;
+        box-shadow: 0 0 4px 1px #0075FF;
     }
 }
 

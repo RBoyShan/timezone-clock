@@ -4,7 +4,7 @@
             <select class="input create-form__control select js-product-collections-filter"
                     name="prod-collections-filter"
             >
-                <option value="0">All Collections</option>
+                <option value="0">All Products</option>
 
                 @foreach($collections as $collection)
                     <option value="{{ $collection->id }}"
@@ -26,9 +26,7 @@
             let id  = this.value;
             let url = '/product';
 
-            if (+id !== 0) {
-                url = '/collection/' + id + url;
-            }
+            url = '/collection/' + id + url;
 
             location.href = url;
         });

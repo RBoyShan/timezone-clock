@@ -6,14 +6,14 @@
 
 @section('page-content')
    <div class="container">
-       <form class="form create-form" method="post" action="collection/{{ $collection_filter_id }}/product/{{ $product->id }}">
+       <form class="form create-form" method="post" action="/collection/{{ $collection_filter_id }}/product/{{ $product->id }}">
 
           @csrf
 
            {{ method_field('patch') }}
 
            <div class="create-form__group">
-               @include('includes/default-input-text', [
+               @include('includes.input.default-input-text', [
                   'field'       => 'name',
                   'label'       => 'Product name:',
                   'placeholder' => 'Product name',
@@ -22,7 +22,7 @@
            </div>
 
            <div class="create-form__group">
-               @include('includes/default-input-text', [
+               @include('includes.input.default-input-text', [
                    'field'       => 'manufacturer',
                    'label'       => 'Product manufacturer:',
                    'placeholder' => 'Product manufacturer',
@@ -31,7 +31,7 @@
            </div>
 
            <div class="create-form__group">
-               @include('includes/default-input-text', [
+               @include('includes.input.default-input-text', [
                    'field'       => 'image',
                    'label'       => 'Product image:',
                    'placeholder' => 'Product image',
@@ -41,7 +41,7 @@
 
            <div class="create-form__group create-form__group--double">
                <div class="create-form__group create-form__group--half">
-                   @include('includes/default-input-number', [
+                   @include('includes.input.default-input-number', [
                         'field'       => 'price',
                         'label'       => 'Product price:',
                         'placeholder' => 'Product price',
@@ -53,7 +53,7 @@
                </div>
 
                <div class="create-form__group create-form__group--half">
-                   @include('includes/default-input-number', [
+                   @include('includes.input.default-input-number', [
                         'field'       => 'count',
                         'label'       => 'Product count:',
                         'placeholder' => 'Product count',
@@ -81,7 +81,7 @@
                    @endforeach
                </select>
 
-               @include('includes/validation-error', ['errorTarget' => 'collection'])
+               @include('includes.errors.validation-error', ['errorTarget' => 'collection'])
            </div>
 
            <button class="button button--submit create-form__submit" type="submit">Edit</button>

@@ -15,6 +15,11 @@
         }
     }
 
+    .create-form__check {
+        display: flex;
+        align-items: baseline;
+    }
+
     .create-form__delete,
     .create-form__submit {
         position: relative;

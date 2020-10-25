@@ -7,7 +7,7 @@
 @endsection
 
 @section('page-content')
-    @include('includes.filter-products-by-group')
+    @include('includes.filters.filter-products-by-group')
 
     <div class="product-list">
         <div class="container">

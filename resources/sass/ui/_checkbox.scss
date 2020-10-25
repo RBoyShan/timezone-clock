@@ -1,12 +1,14 @@
 .checkbox,
 input[type="checkbox"] {
-   
+    justify-self: flex-start;
+    width: auto;
 
     &:checked {
-        
+
     }
 
-    + label {
-       
+
+    & + label {
+        margin-left: 10px;
     }
 }

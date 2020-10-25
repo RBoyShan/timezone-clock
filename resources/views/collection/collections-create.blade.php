@@ -11,7 +11,7 @@
             {{ csrf_field() }}
 
             <div class="create-form__group">
-                @include('includes/default-input-text', [
+                @include('includes.input.default-input-text', [
                     'field'       => 'name',
                     'label'       => 'Collection name:',
                     'placeholder' => 'Collection name',
@@ -20,7 +20,7 @@
             </div>
 
             <div class="create-form__group">
-                @include('includes/default-input-textbox', [
+                @include('includes.input.default-input-textbox', [
                    'field'       => 'description',
                    'label'       => 'Collection description:',
                    'placeholder' => 'Collection description',
@@ -29,7 +29,7 @@
             </div>
 
             <div class="create-form__group">
-                @include('includes/default-input-text', [
+                @include('includes.input.default-input-text', [
                    'field'       => 'image_src',
                    'label'       => 'Collection image:',
                    'placeholder' => 'Collection image URL',
@@ -52,7 +52,7 @@
                     @endforeach
                 </select>
 
-                @include('includes/validation-error', ['errorTarget' => 'product_id'])
+                @include('includes.errors.validation-error', ['errorTarget' => 'product_id'])
             </div>
 
             <button class="button button--submit create-form__submit" type="submit">Add</button>

@@ -9,6 +9,22 @@
     text-decoration: none;
     color: white;
 
+    &.button--link {
+        margin-top: 10px;
+        padding: 0;
+        background-color: transparent;
+        text-decoration: underline;
+        color: #1b4b72;
+        transition: color .3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            text-decoration: underline;
+            color: lighten(#1b4b72, 15);
+        }
+    }
+
     &:hover,
     &:focus {
         border: none;
