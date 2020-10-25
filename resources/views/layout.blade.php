@@ -81,7 +81,7 @@
                         <form id="logout-form"
                               action="{{ route('logout') }}"
                               method="POST"
-                              style="display: none;"
+                              class="form form--hidden"
                         >
                             @csrf
                         </form>
