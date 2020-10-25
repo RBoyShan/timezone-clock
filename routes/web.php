@@ -14,3 +14,7 @@ Route::resource('collection/{cid}/product', 'ProductController');
 Route::resource('collections', 'CollectionController');
 
 Route::get('product/collections/{id}', 'ProductController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
