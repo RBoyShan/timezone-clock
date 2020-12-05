@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Product;
+use Illuminate\Support\Facades\Gate;
 
 class PagesController extends Controller
 {
@@ -13,5 +12,13 @@ class PagesController extends Controller
 
     public function about() {
         return view('page-about');
+    }
+
+    public function admin() {
+       if (Gate::allows('admin-panel')) {
+           return view('admin.admin');
+       }
+
+       return view('index');
     }
 }

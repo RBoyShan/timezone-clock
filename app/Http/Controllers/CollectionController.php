@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Collection;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 class CollectionController extends Controller
@@ -25,19 +26,16 @@ class CollectionController extends Controller
 
     public function store(Request $request)
     {
-        $data = $this->validation($request);
+        if (Auth::user() && Auth::user()->can('admin', Collection::class)) {
+            $data = $this->validation($request);
 
-        Collection::create($data);
+            Collection::create($data);
 
-        return redirect('collections');
+            return redirect('collections');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Collection  $collection
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Collection $collection)
     {
         //
@@ -45,10 +43,12 @@ class CollectionController extends Controller
 
     public function edit(Collection $collection)
     {
-        return view('collection.collections-edit', [
-           'collection' => $collection,
-           'products'   => Product::all()->sortBy('name')
-        ]);
+        if (Auth::user() && Auth::user()->can('admin', Collection::class)) {
+            return view('collection.collections-edit', [
+                'collection' => $collection,
+                'products'   => Product::all()->sortBy('name')
+            ]);
+        }
     }
 
     public function update(Request $request, Collection $collection)
