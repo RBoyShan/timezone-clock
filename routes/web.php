@@ -22,3 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', 'PagesController@admin')->middleware('auth');
+
+Route::get('/admin/products', 'PagesController@admin_products')->middleware('auth');
+
+Route::get('/admin/collections', 'PagesController@admin_collections')->middleware('auth');

@@ -42,10 +42,6 @@
                 <a class="header__navigation-link" href="/collections">{{ __('Collections') }}</a>
             </li>
 
-            <li class="header__navigation-item">
-                <a class="header__navigation-link" href="/collection/0/product/create">{{ __('Create') }}</a>
-            </li>
-
             @can('admin-panel')
                 <li class="header__navigation-item">
                     <a class="header__navigation-link" href="/admin">{{ __('Admin') }}</a>

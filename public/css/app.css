@@ -11395,7 +11395,7 @@ textarea {
   padding: 12px;
   border: none;
   border-radius: 4px;
-  background-color: salmon;
+  background-color: green;
   outline: none;
   font-family: "Nunito", sans-serif;
   text-decoration: none;
@@ -11422,7 +11422,7 @@ textarea {
 .button:focus {
   border: none;
   outline: none;
-  background-color: #f96a59;
+  background-color: #006700;
   text-decoration: none;
   color: white;
 }
@@ -11806,5 +11806,109 @@ textarea,
   letter-spacing: 1px;
   color: white;
   transform: translate(-50%, -50%);
+}
+
+.admin-panel {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.admin-panel .admin-panel__category {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-panel .admin-panel__category-item {
+  position: relative;
+}
+
+.admin-panel .admin-panel__category-item + .admin-panel__category-item {
+  margin-top: 55px;
+}
+
+.admin-panel .admin-panel__item-card-image-wrapper,
+.admin-panel .admin-panel__category-item-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 35%;
+}
+
+.admin-panel .admin-panel__item-card-image,
+.admin-panel .admin-panel__category-item-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.admin-panel .admin-panel__category-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+  color: white;
+  transition: background-color 2s ease;
+}
+
+@media (-moz-touch-enabled: 0), (hover: hover) {
+  .admin-panel .admin-panel__category-item-overlay:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.admin-panel .admin-panel__top-bar {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.admin-panel .admin-panel__title {
+  margin-bottom: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.admin-panel .admin-panel__add-button {
+  margin-left: auto;
+}
+
+.admin-panel .admin-panel__item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+.admin-panel .admin-panel__item-card-image-wrapper {
+  max-width: 100px;
+  padding-top: 9%;
+}
+
+.admin-panel .admin-panel__item-card-image-wrapper.admin-panel__item-card-image-wrapper--collection {
+  max-width: 300px;
+}
+
+.admin-panel .admin-panel__item-card-title {
+  max-width: 70%;
+  font-size: 24px;
 }
 

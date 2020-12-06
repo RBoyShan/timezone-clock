@@ -26,7 +26,7 @@ class CollectionController extends Controller
 
     public function store(Request $request)
     {
-        if (Auth::user() && Auth::user()->can('admin', Collection::class)) {
+        if (Auth::user() && Auth::user()->can('admin-panel', Collection::class)) {
             $data = $this->validation($request);
 
             Collection::create($data);
@@ -43,12 +43,14 @@ class CollectionController extends Controller
 
     public function edit(Collection $collection)
     {
-        if (Auth::user() && Auth::user()->can('admin', Collection::class)) {
+        if (Auth::user() && Auth::user()->can('admin-panel', Collection::class)) {
             return view('collection.collections-edit', [
                 'collection' => $collection,
                 'products'   => Product::all()->sortBy('name')
             ]);
         }
+
+        return view('index');
     }
 
     public function update(Request $request, Collection $collection)
@@ -65,7 +67,7 @@ class CollectionController extends Controller
 
         $collection->save();
 
-        return redirect('collections');
+        return redirect('/admin/collections');
     }
 
     public function destroy(Collection $collection)

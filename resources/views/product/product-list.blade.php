@@ -32,11 +32,8 @@
                         <p class="product-list__item-price">
                             $ {{ $product->price }}
                         </p>
-
-                        <a href="product/{{ $product->id }}/edit">Edit Product</a>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </div>

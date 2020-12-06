@@ -83,7 +83,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('collection/'.$cid.'/product');
+        return redirect('/admin/products');
     }
 
     public function destroy($cid, Product $product) {
