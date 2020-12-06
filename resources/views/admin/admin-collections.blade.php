@@ -12,7 +12,7 @@
                     {{ __('Admin Shop Collections') }}
                 </h2>
 
-                <a class="button button--action admin-panel__add-button" href="/collections/create">
+                <a class="button button--action admin-panel__add-button" href="collection/{{ $collection->id }}/product">
                     {{ __('Add Collection') }}
                 </a>
             </div>

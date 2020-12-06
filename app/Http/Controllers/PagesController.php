@@ -9,7 +9,14 @@ use Illuminate\Support\Facades\Gate;
 class PagesController extends Controller
 {
     public function home() {
-        return view('index');
+        $products = Product::all()->sortByDesc('created_at')->take(2);
+        $collections = Collection::all()->sortByDesc('created_at')->take(3);
+
+        return view('index')
+            ->with([
+                'products' => $products,
+                'collections' => $collections
+            ]);
     }
 
     public function about() {

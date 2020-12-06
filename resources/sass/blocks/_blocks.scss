@@ -1,6 +1,8 @@
 //General
 @import "general/_header";
 @import "general/_create-form";
+@import "general/_page-banner";
+@import "general/_footer";
 
 //About page
 @import "about/_about-project";
@@ -14,3 +16,9 @@
 
 //Admin panel
 @import "admin-panel/_admin-panel";
+
+//Homepage
+@import "homepage/main-banner/_main-banner";
+@import "homepage/featured-collections/_featured-collections";
+@import "homepage/gallery/_gallery";
+@import "homepage/featured-products/_featured-products";

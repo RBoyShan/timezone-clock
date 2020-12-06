@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "@popperjs/core": "^2.5.3"
+        "@popperjs/core": "^2.5.3",
+        "slick-carousel": "^1.8.1",
+        "slick-slider": "^1.8.2"
     }
 }
