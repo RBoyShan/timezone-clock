@@ -1,0 +1,47 @@
+.about-project {
+    .about-project__content {
+        margin: 0 auto;
+        padding-top: 200px;
+        padding-bottom: 170px;
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    .about-project__content-block {
+        margin-bottom: 50px;
+    }
+
+    .about-project__content-title {
+        position: relative;
+        display: inline-block;
+        margin-bottom: 30px;
+        padding-left: 68px;
+        font-size: 30px;
+        font-weight: 700;
+        color: #000a2d;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 54px;
+            height: 2px;
+            background: #eb566c;
+            transform: translateY(-50%);
+        }
+    }
+
+    .about-project__content-paragraph {
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #464d65;
+    }
+
+    @media (max-width: 991px) {
+        .about-project__content {
+            padding-top: 75px;
+            padding-bottom: 50px;
+        }
+    }
+}

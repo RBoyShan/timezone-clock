@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('app-title', 'Product list')
+@section('app-title', 'Shop Watches')
 
 @section('page-title')
     {{ $page_title }}

@@ -7,20 +7,41 @@
 @section('page-content')
     <div class="about-project">
         <div class="container">
-            <p class="about-project__content">
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eveniet expedita, laborum
-                    mollitia, nemo placeat possimus quis quos similique velit veniam voluptate? Facere fugiat nemo
-                    sapiente ut vel! Cumque, vel.</span>
-                <span>Aliquid aspernatur assumenda commodi culpa, debitis delectus, deserunt ea eaque eos facilis
-                    fugit impedit maiores maxime modi nam natus nesciunt non nostrum obcaecati perspiciatis praesentium
-                    reiciendis rem similique unde, voluptatibus.</span>
-                <span>Aliquam corporis, doloribus eos esse fugiat minima natus necessitatibus neque numquam perspiciatis
-                    quos reiciendis sunt voluptas? Aspernatur id laudantium, magnam natus non placeat praesentium quae,
-                    ratione recusandae saepe, voluptate voluptatibus!</span>
-                <span>Autem commodi consequatur debitis, deserunt doloremque enim expedita fugit in libero nam neque numquam,
-                    quae quod. Autem facere fugit itaque nostrum pariatur quis quo sapiente tempora, tempore totam!
-                    Provident, tempora?</span>
-            </p>
+            <div class="about-project__content">
+                <div class="about-project__content-block">
+                    <h4 class="about-project__content-title">
+                        {{ __('Our Mission') }}
+                    </h4>
+
+                    <p class="about-project__content-paragraph">
+                        Consectetur adipiscing elit, sued do eiusmod tempor ididunt udfgt labore et dolore magna aliqua.
+                        Quis ipsum suspendisces gravida. Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                        Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                    </p>
+
+                    <p class="about-project__content-paragraph">
+                        Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                        Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan.
+                    </p>
+                </div>
+
+                <div class="about-project__content-block">
+                    <h4 class="about-project__content-title">
+                        {{ __('Our Vision') }}
+                    </h4>
+
+                    <p class="about-project__content-paragraph">
+                        Consectetur adipiscing elit, sued do eiusmod tempor ididunt udfgt labore et dolore magna aliqua.
+                        Quis ipsum suspendisces gravida. Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                        Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                    </p>
+
+                    <p class="about-project__content-paragraph">
+                        Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan lacus.
+                        Risus commodo viverra sebfd dho eiusmod tempor maecenas accumsan.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
